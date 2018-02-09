@@ -1,0 +1,35 @@
+This example shows easy way to run python code from bash
+
+read a csv file from bash
+$cat somecsvfile.csv
+and this will diplay the content, but if we want change our csv to json we can do so from bash in this way
+
+python interprter....
+
+Python 2.7.13 (default, Nov 23 2017, 15:37:09) 
+[GCC 6.3.0 20170406] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+>>> import csv, json
+>>> 
+>>> print json.dumps(list(csv.reader(open('Col0118Get.csv'))))
+[["\ufeffOpe_nom", "1", "2", "3", "4", "aver"], ["Reyna Puente", "1", "1", "1", "1", "1"],
+         ["Mauricio Perez", "1", "", "", "", "1"], ["Mariana Perez", "1", "1", "", "1", "1"],
+         ["Ana Silva", "1", "0.97109999999999996", "1", "0.98709999999999998", "0.98954999999999993"],
+         ["Karina Espirtu", "1", "1", "", "0.98070000000000002", "0.99356666666666671"],
+         ["Carmen Ramirez", "1", "0.99029999999999996", "1", "0.96150000000000002", "0.98794999999999999"],
+         ["Hector Ramirez", "1", "0.98070000000000002", "0.98460000000000003", "0.96150000000000002",
+          "0.98170000000000002"], ["Monica Aguirre", "1", "0.99029999999999996", "1", "1", "0.99757499999999999"]
+          
+now lets run the code from the bash,
+
+$python -c "import csv, json;print json.dumps(list(csv.reader(open('Col0118Get.csv'))))"
+[["\ufeffOpe_nom", "1", "2", "3", "4", "aver"], ["Reyna Puente", "1", "1", "1", "1", "1"],
+         ["Mauricio Perez", "1", "", "", "", "1"], ["Mariana Perez", "1", "1", "", "1", "1"],
+         ["Ana Silva", "1", "0.97109999999999996", "1", "0.98709999999999998", "0.98954999999999993"],
+         ["Karina Espirtu", "1", "1", "", "0.98070000000000002", "0.99356666666666671"],
+         ["Carmen Ramirez", "1", "0.99029999999999996", "1", "0.96150000000000002", "0.98794999999999999"],
+         ["Hector Ramirez", "1", "0.98070000000000002", "0.98460000000000003", "0.96150000000000002",
+          "0.98170000000000002"], ["Monica Aguirre", "1", "0.99029999999999996", "1", "1", "0.99757499999999999"]
+nice and simple
+
